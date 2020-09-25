@@ -5,7 +5,7 @@ class CalculateScoreDifferential
   def call(adjusted_gross_score, course_rating, slope_rating)
     raw_differential =
       (adjusted_gross_score - course_rating) *
-      (STANDARD_SLOPE_RATING / slope_rating)
+      (STANDARD_SLOPE_RATING.fdiv(slope_rating))
 
     raw_differential.round(DECIMAL_POINTS_TO_ROUND_TO)
   end
